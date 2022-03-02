@@ -1,4 +1,6 @@
+use session;
+
 fn main() {
-    println!("Hello, world!");
-    //this is just a test for the ssh-connection
+    let mut imap_session = session::mail_sessions::connect_client();
+    session::mail_sessions::get_mails(&mut imap_session);
 }
